@@ -17,7 +17,7 @@ defmodule OmegaClientTest do
   end
 
   test "make request without key given" do
-    assert_raise RuntimeError, fn ->
+    assert_raise ArgumentError, ":key must be given", fn ->
       Client.request(:get, "charges", [])
     end
   end

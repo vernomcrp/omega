@@ -28,7 +28,7 @@ defmodule Omega.Client do
   end
 
   def request(method, path, opts) do
-    key    = opts[:key] || raise ":key must be given"
+    key    = opts[:key] || raise ArgumentError, ":key must be given"
     body   = opts[:body] || []
     params = opts[:params] || []
 
