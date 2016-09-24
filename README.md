@@ -1,4 +1,5 @@
 # Omega
+[![Build Status](https://travis-ci.org/teerawat1992/omega.svg)](https://travis-ci.org/teerawat1992/omega)
 
 Module wrapper for making Omise API clients.
 
