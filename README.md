@@ -1,7 +1,28 @@
 # Omega
 [![Build Status](https://travis-ci.org/teerawat1992/omega.svg)](https://travis-ci.org/teerawat1992/omega)
+[![Hex.pm](https://img.shields.io/hexpm/v/omega.svg?style=flat-square)](https://hex.pm/packages/omega)
 
 Module wrapper for making Omise API clients.
+
+## Installation
+
+  1. Add omega to your list of dependencies in `mix.exs`:
+
+  ```elixir
+  def deps do
+    [{:omega, "~> 0.1"}]
+  end
+  ```
+
+  2. Ensure omise is started before your application:
+
+  ```elixir
+  def application do
+    [applications: [:omega]]
+  end
+  ```
+
+  3. Run `mix deps.get`
 
 ## Examples
 
