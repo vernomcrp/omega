@@ -35,10 +35,14 @@ defmodule Omega.Mixfile do
   # Type "mix help deps" for more examples and options
   defp deps do
     [
-      {:poison, "~> 2.2"},
-      {:mock, "~> 0.2", only: :test},
+      {:poison, "~> 2.2 or ~> 3.0"},
+
+      # Dev dependencies
       {:earmark, "~> 1.0", only: :dev},
       {:ex_doc, "~> 0.13", only: :dev},
+
+      # Test dependencies
+      {:mock, "~> 0.2", only: :test},
     ]
   end
 

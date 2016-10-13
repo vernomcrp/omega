@@ -52,3 +52,13 @@ end
 $ iex -S mix
 iex> MyApp.OmiseClient.Charge.list(limit: 10, offset: 5)
 ```
+
+## HTTP Configuration
+
+To configure the HTTP options, you could optionally add `:http_options` key to the
+`omega` configuration. For a full list of the available options, please check [Erlang httpc library](http://erlang.org/doc/man/httpc.html)
+
+```elixir
+config :omega,
+  http_options: [timeout: 10_000, connection_timeout: 10_000]
+```

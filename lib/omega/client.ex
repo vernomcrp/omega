@@ -4,6 +4,7 @@ defmodule Omega.Client do
   import URI, only: [encode_query: 1]
 
   @base_uri "https://api.omise.co/"
+  @http_opts_key :http_options
 
   defmacro __using__(_) do
     quote do
@@ -35,9 +36,10 @@ defmodule Omega.Client do
     req_url     = to_charlist(@base_uri <> path <> "?" <> encode_query(params))
     req_headers = [auth_header(key)]
     req_opts    = prepare_request(req_url, req_headers, body)
+    http_opts   = prepare_http_options()
 
     method
-    |> :httpc.request(req_opts, [], [])
+    |> :httpc.request(req_opts, http_opts, [])
     |> normalize_response()
   end
 
@@ -46,6 +48,10 @@ defmodule Omega.Client do
   end
   defp prepare_request(req_url, req_headers, body) do
     {req_url, req_headers, 'application/json', encode_to_json(body)}
+  end
+
+  defp prepare_http_options do
+    Application.get_env(:omega, @http_opts_key, [])
   end
 
   defp auth_header(key) do
