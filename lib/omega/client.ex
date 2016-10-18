@@ -3,7 +3,7 @@ defmodule Omega.Client do
 
   import URI, only: [encode_query: 1]
 
-  @base_uri "https://api.omise.co/"
+  @base_uri Application.get_env(:omega, :base_uri, "https://api.omise.co/") 
   @http_opts_key :http_options
 
   defmacro __using__(_) do
