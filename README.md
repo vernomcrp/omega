@@ -3,6 +3,7 @@
 [![Hex.pm](https://img.shields.io/hexpm/v/omega.svg?style=flat-square)](https://hex.pm/packages/omega)
 
 Module wrapper for making Omise API clients.
+Check out [Omise API Reference](https://www.omise.co/api-reference).
 
 ## Installation
 

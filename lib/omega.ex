@@ -1,6 +1,7 @@
 defmodule Omega do
   @moduledoc """
   Module wrapper for making Omise API clients.
+  Check out [Omise API Reference](https://www.omise.co/api-reference).
 
   ## Examples
 

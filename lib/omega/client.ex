@@ -3,7 +3,7 @@ defmodule Omega.Client do
 
   import URI, only: [encode_query: 1]
 
-  @base_uri Application.get_env(:omega, :base_uri, "https://api.omise.co/") 
+  @base_uri Application.get_env(:omega, :base_uri, "https://api.omise.co/")
   @http_opts_key :http_options
 
   defmacro __using__(_) do
@@ -29,8 +29,8 @@ defmodule Omega.Client do
   end
 
   def request(method, path, opts) do
-    key    = opts[:key] || raise ArgumentError, ":key must be given"
-    body   = opts[:body] || []
+    key    = opts[:key]    || raise ArgumentError, ":key must be given"
+    body   = opts[:body]   || []
     params = opts[:params] || []
 
     req_url     = to_charlist(@base_uri <> path <> "?" <> encode_query(params))
